@@ -1,5 +1,19 @@
+/**
+ * <h1> Proyecto POO - Entrega #2 | Programa que maneja las aglomeraciones por COVID-19 </h1>
+ * <h2> Main (Pequeña descripción de que clase es) </h2>
+ * 
+ * 
+ * 
+ * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
+ * 
+ * Creado por:
+ * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
+ * @version 1.0
+ * @since 2020
+ * 
+ */
+
 // De esto se encargará Diego Sanchez
-// Pero no se extrañen si ponemos más de algo aquí (será más que todo para hacer pruebas)
 
 import java.util.Scanner;
 
@@ -10,16 +24,16 @@ class Main {
   public static void main(String[] args) {
     System.out.println("Hello world!");
 
+    // Vamos a instanciar el registro en donde se almacenarán todos los registros
     Registro registro = new Registro();
 
     boolean salir = false;
     do{
 
-      // Esto sera una simulacion en sí y pasaran los días
+      // Esto sera una simulacion en sí y pasaran los días      
       System.out.println("1. Guardar info");
       System.out.println("2. Mostrar info");
       System.out.println("3. Salir");
-      System.out.println("4. Pasar al siguiente día"); // Todavía no esta listo
       String opcion = scanner.nextLine();
 
       // No se que más opciones irian, aquí solo dejo esto para probar la clase Registro
@@ -27,22 +41,22 @@ class Main {
         case "1":
           System.out.println("\n----- Guardar info -----");
           System.out.println("Porfavor ingrese la información que desee guardar: ");
-          String info = scanner.nextLine();
+          String info = scanner.nextLine(); //   
 
-          registro.AgregarInformación(info); // Yo se que este metodo que esta siendo desarrollado debe de pulirse mucho mejor, solo quise hacerlo funcional para ver si todo esta en orden :)
+          registro.AgregarInformación(info); // Aquí se mandará la información al registro
 
           break;
 
         case"2":
           System.out.println("\n----- Mostrar info -----");
   
-          System.out.println(registro.MostrarInformacion());
+          System.out.println(registro.MostrarInformacion()); // Se mostrará la información registrada
           
           break;
 
         case "3":
           System.out.println("\nSaliendo....");
-          salir = true;
+          salir = true; // Se terminará con el ciclo do-while del menu
           break;
 
         default:

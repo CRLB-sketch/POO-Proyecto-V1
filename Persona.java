@@ -1,7 +1,24 @@
+/**
+ * <h1> Proyecto POO - Entrega #2 | Programa que maneja las aglomeraciones por COVID-19 </h1>
+ * <h2> NombreClase (Pequeña descripción de que clase es) </h2>
+ * 
+ * Escribir aquí una breve explicación de lo que realizará esta clase en específico
+ * Escribir aquí una breve explicación de lo que realizará esta clase en específico
+ * Escribir aquí una breve explicación de lo que realizará esta clase en específico
+ * 
+ * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
+ * 
+ * Creado por:
+ * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
+ * @version 1.0
+ * @since 2020
+ * 
+ */
+
 class Persona{
   // --> Atributos
 	private String cui;       
-	private String zona;
+	private int zona;
 	private double hora;
 	private String lugar_especifico;
 	
@@ -15,7 +32,7 @@ class Persona{
   }
 
   // Sobrecarga del constructor
-	public Persona(String cui, String zona, double hora, String lugar_especifico){ 
+	public Persona(String cui, int zona, double hora, String lugar_especifico){ 
 		this.cui = cui;
     this.zona = zona;
     this.hora = hora;
@@ -27,7 +44,7 @@ class Persona{
 		return cui;
 		
 	}
-	public String getZona(){
+	public int getZona(){
 		return zona;
 	}
 
@@ -44,7 +61,7 @@ class Persona{
     this.cui = cui;
 	}
 	
-	public void setZona(String zona){
+	public void setZona(int zona){
     this.zona = zona;
 	}
 	
@@ -57,7 +74,9 @@ class Persona{
 	}
 	
   // --> Metodos
-	public int PersonaAlRegistro(){
-		return 0;
+	public String PersonaAlRegistro(){ // talvez no
+
+    
+		return "";
 	}		
  }

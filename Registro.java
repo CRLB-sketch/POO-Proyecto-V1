@@ -1,3 +1,20 @@
+/**
+ * <h1> Proyecto POO - Entrega #2 | Programa que maneja las aglomeraciones por COVID-19 </h1>
+ * <h2> Registro </h2>
+ * 
+ * Estaa clase se encargará de mantener el registro de todos los datos
+ * solicitados y también se encargará de manejar las probabilidades.
+ * 
+ * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
+ * 
+ * Creado por:
+ * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
+ * @version 1.0
+ * @since 2020
+ * 
+ */
+
+// Vamos a importar el paquete para usar ArrayList
 import java.util.ArrayList;
 
 // Aquí estará el encabezado
@@ -18,16 +35,17 @@ public class Registro{
     return registro;
   }
 
-  // --> Setters
-
   // --> Metodos
-  public void AgregarInformación(String info){
-    registro.add(info);
+  // Este metodo es para agregar la información al registro
+  public void AgregarInformación(String info){ 
+    registro.add(info); // Se almacenará la información solicitada
   }
 
+  // Este metodo es para mostrar la información almacenada
   public String MostrarInformacion(){
     String info = "";
 
+    // Se mostrará el listado de todos los registros
     for(String i: registro){
       info += "-> " + i + "\n";
     }
