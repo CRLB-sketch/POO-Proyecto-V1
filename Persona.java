@@ -26,7 +26,7 @@ class Persona{
 	// --> Constructor
   public Persona(){
     this.cui = "";
-    this.zona = "";
+    this.zona = 0;
     this.hora = 0;
     this.lugar_especifico = "";
   }
@@ -39,7 +39,7 @@ class Persona{
     this.lugar_especifico = lugar_especifico;
 	}
 	
-	// --> Getters
+	// --> Getters de información
 	public String getCui(){
 		return cui;
 		
@@ -52,11 +52,11 @@ class Persona{
 		return hora;		
 	}
 	
-	public String getLugarEspecífico(){
+	public String getLugarEspecifico(){
 		return lugar_especifico;
 	}
 	
-	// --> Setters
+	// --> Setters de información
 	public void setCui(String cui){
     this.cui = cui;
 	}
@@ -71,12 +71,5 @@ class Persona{
 	
 	public void setLugarEspecífico(String lugar_especifico){
     this.lugar_especifico = lugar_especifico;
-	}
-	
-  // --> Metodos
-	public String PersonaAlRegistro(){ // talvez no
-
-    
-		return "";
-	}		
- }
+	}	
+}

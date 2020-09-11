@@ -2,10 +2,6 @@
  * <h1> Proyecto POO - Entrega #2 | Programa que maneja las aglomeraciones por COVID-19 </h1>
  * <h2> Zonas: Clase que lleva el registro de simulación de personas en cada zona y le suma a la zona cada nuevo registro </h2>
  * 
- * Escribir aquí una breve explicación de lo que realizará esta clase en específico
- * Escribir aquí una breve explicación de lo que realizará esta clase en específico
- * Escribir aquí una breve explicación de lo que realizará esta clase en específico
- * 
  * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
  * 
  * Creado por:
@@ -30,6 +26,7 @@ public class Zonas{
     for(int i=0;i<zonas.length ; i++){ 
       int rand_int = rand.nextInt(1000);
       zonas[i]= rand_int;
+      System.out.println("Zona "+(i¨+1)":")
       System.out.println(zonas[i]);
       }
     return n;

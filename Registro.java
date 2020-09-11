@@ -21,12 +21,12 @@ import java.util.ArrayList;
 
 public class Registro{
   // --> Atributos  
-  // private ArrayList<Persona> personas;
+  private ArrayList<Persona> personas;
   private ArrayList<String> registro;  
 
   // --> Constructores
   public Registro(){
-    // personas = new ArrayList<Persona>();
+    personas = new ArrayList<Persona>();
     registro = new ArrayList<String>();
   }
 
@@ -36,8 +36,22 @@ public class Registro{
   }
 
   // --> Metodos
+  // Este método es para agregar a la persona en el historial de personas
+  public void AgregarPersona(Persona p){
+    personas.add(p); // Se agregará a la persona al registro de personas
+
+    String informacion = "Persona CUI: " + p.getCui() + "\n" +
+                         "Zona: " + p.getZona() + "\n" +
+                         "Hora: " + p.getHora() + "\n" +
+                         "Lugar Específico: " + p.getLugarEspecifico() + "\n" +
+                         "______________________________________";
+
+    AgregarInformacion(informacion);
+  }
+
   // Este metodo es para agregar la información al registro
-  public void AgregarInformación(String info){ 
+  private void AgregarInformacion(String info){ 
+
     registro.add(info); // Se almacenará la información solicitada
   }
 
@@ -51,6 +65,11 @@ public class Registro{
     }
 
     return info;
+  }
+
+  public int PersonasRegistradas(){
+    int cantidad = personas.size();
+    return cantidad;
   }
 
   public void AgregarProbabilidad(){
