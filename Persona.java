@@ -1,10 +1,9 @@
 /**
  * <h1> Proyecto POO - Entrega #2 | Programa que maneja las aglomeraciones por COVID-19 </h1>
- * <h2> NombreClase (Pequeña descripción de que clase es) </h2>
+ * <h2> Persona </h2>
  * 
- * Escribir aquí una breve explicación de lo que realizará esta clase en específico
- * Escribir aquí una breve explicación de lo que realizará esta clase en específico
- * Escribir aquí una breve explicación de lo que realizará esta clase en específico
+ * Esta clase representará a una persona y tendrá sus datos correspondientes
+ * 
  * 
  * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
  * 

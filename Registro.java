@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class Registro{
   // --> Atributos  
-  private ArrayList<Persona> personas;
+  private ArrayList<Persona> personas; 
   private ArrayList<String> registro;  
 
   // --> Constructores
@@ -38,7 +38,7 @@ public class Registro{
   // --> Metodos
   // Este método es para agregar a la persona en el historial de personas
   public void AgregarPersona(Persona p){
-    personas.add(p); // Se agregará a la persona al registro de personas
+    personas.add(p); // Se agregará a la persona al listado de personas
 
     String informacion = "Persona CUI: " + p.getCui() + "\n" +
                          "Zona: " + p.getZona() + "\n" +
@@ -46,6 +46,7 @@ public class Registro{
                          "Lugar Específico: " + p.getLugarEspecifico() + "\n" +
                          "______________________________________";
 
+    // Se agregará la información en el registro de información
     AgregarInformacion(informacion);
   }
 
@@ -67,33 +68,10 @@ public class Registro{
     return info;
   }
 
+  // Este método es para mantener el control de las personas que han sido registradas
   public int PersonasRegistradas(){
     int cantidad = personas.size();
     return cantidad;
-  }
-
-  public void AgregarProbabilidad(){
-
-    // Agregar probibilidad de un lugar que no existe
-
-
-  }
-
-  public String ObtenerProbabilidad(String zona, String horario, String lugar_especifico){
-    String info = "";
-
-    // Vamos a poner las operaciones correspondientes
-
-    // Evaluar lo que la persona ya metio.
-    // Tenemos control del lugar en donde el usuario quiere ir.
-    // Este metodo se encargará de avisar la probabilidad de contagio por covid o decir que el contagio.
-    // Si no existe el lugar el programa lo tomará en cuenta.
-
-    return info;
-  }
-
-  public void LimpiarRegistros(){
-    
   }
 
 }

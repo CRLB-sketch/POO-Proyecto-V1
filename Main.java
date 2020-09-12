@@ -51,18 +51,17 @@ class Main {
             int uzona = scanner.nextInt();
             //En zonas no se si es mejor ingresar la clase zonas o no--Diego
             System.out.println("Ingrese la hora actual (Formato de 24 horas): ");
-            double uhora = scanner.nextDouble();// Aqui creo que quedaria mejor un string o un date pero no se como se  hace--Diego
+            double uhora = scanner.nextDouble();
             String salto = scanner.nextLine();
-            System.out.println("Ingrese El lugar especifico: "); //Para este prototipo sugiero todavia no ingresar esto -- Diego
+
+            System.out.println("Ingrese El lugar especifico: "); 
             String uespecifico = scanner.nextLine();
+
             // Aquí se creará una nueva persona con las caracteristicas ingresadas anteriormente
             persona = new Persona(ucui, uzona, uhora, uespecifico);
-            Zonas zn=new Zonas();
-            //Si se puede el registro tendria ahora que agregar personas y no un string --Diego
-            // A va! Voy a crear un ArrayList exclusivo para las personas, muchas gracias por avisar :D --Cristian
+            // Zonas zn = new Zonas();
 
-            // registro.AgregarInformación(info); // Aquí se mandará la información al registro
-            registro.AgregarPersona(persona); // Aquí se mandará la persona al historial de personas
+            registro.AgregarPersona(persona); // Aquí se mandará la persona al historial de personas y de una vez se creará el registro
 
             System.out.println("\n--> Información almacenada exitosamente :D\n");
 
@@ -83,16 +82,16 @@ class Main {
             System.out.println(registro.MostrarInformacion()); // Se mostrará la información registrada
             System.out.println("Cantidad personas registradas: " + registro.PersonasRegistradas());
             System.out.println("______________________________________");
+            System.out.println("---> Presiona enter para ver la cantidad de personas por zona <---");
+            String enter1 = scanner.nextLine();
+            // Se mostrará la cantidad de personas por zona del momento
             System.out.println("La cantidad de personas por zona son:");
             int r;
             r= zonas.dpzonas();
             System.out.println(r);
           }
   
-
-          // System.out.println("Población de la zona: "+zonas.dpzonas());
-          //Tambien se debe mostrar la poblacion de la zona--Diego
-          
+          //Tambien se debe mostrar la poblacion de la zona--Diego          
           break;
 
         //Opcion para salir
@@ -101,11 +100,12 @@ class Main {
           salir = true; // Se terminará con el ciclo do-while del menu
           break;
 
+        // Si no ingresa una opcion valida no se llevará a cabo una de las operaciones
         default:
           System.out.println("\n-> No ingreso un valor valido");
           break;        
       }
 
-    }while(salir != true);
+    }while(salir != true); // Condicional para que continue o termine el ciclo
   }
 }
