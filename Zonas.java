@@ -39,10 +39,5 @@ public class Zonas{
       }
     return n;
   }
-
-  /*
-  public void setdespzonas(int zonas){
-    this.zona = Zona; 
-  }*/
   
 }

@@ -13,8 +13,6 @@
 
 import java.util.Scanner;
 
-//Tengo guardado  el main original de Christian por si quieren regresar a ese--Diego
-// Buenisima onda Diego! :D --Cristian
 class Main {
 
   static Scanner scanner = new Scanner(System.in);
@@ -59,7 +57,6 @@ class Main {
 
             // Aquí se creará una nueva persona con las caracteristicas ingresadas anteriormente
             persona = new Persona(ucui, uzona, uhora, uespecifico);
-            // Zonas zn = new Zonas();
 
             registro.AgregarPersona(persona); // Aquí se mandará la persona al historial de personas y de una vez se creará el registro
 
