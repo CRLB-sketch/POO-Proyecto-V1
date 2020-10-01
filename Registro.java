@@ -1,28 +1,29 @@
 /**
  * <h1> Proyecto POO - Entrega #2 | Programa que maneja las aglomeraciones por COVID-19 </h1>
  * <h2> Registro </h2>
- * 
+ *
  * Estaa clase se encargará de mantener el registro de todos los datos
  * solicitados y también se encargará de manejar las probabilidades.
- * 
+ *
  * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
- * 
+ *
  * Creado por:
  * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
  * @version 2.0
  * @since 2020
- * 
+ *
  */
 
 // Vamos a importar el paquete para usar ArrayList
 import java.util.ArrayList;
+import java.io.*;//Librerias varias que ayudaran a los registros y mantener la informacion
 
 // Aquí estará el encabezado
 
 public class Registro{
-  // --> Atributos  
-  private ArrayList<Persona> personas; 
-  private ArrayList<String> registro;  
+  // --> Atributos
+  private ArrayList<Persona> personas;
+  private ArrayList<String> registro;
 
   // --> Constructores
   public Registro(){
@@ -50,8 +51,21 @@ public class Registro{
     AgregarInformacion(informacion);
   }
 
+  /*public void CrearRegistro(){
+    File f;
+    FileWriter W;
+    BufferedWriter bw;
+    PrintWriter;
+
+    try {
+      
+    } catch(Exception e) {
+
+    }
+  }*/ //Será el método que mantendrá los registros registrados como archivos de texto
+
   // Este metodo es para agregar la información al registro
-  private void AgregarInformacion(String info){ 
+  private void AgregarInformacion(String info){
 
     registro.add(info); // Se almacenará la información solicitada
   }
