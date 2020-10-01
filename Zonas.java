@@ -6,7 +6,7 @@
  * 
  * Creado por:
  * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
- * @version 1.0
+ * @version 2.0
  * @since 2020
  * 
  */

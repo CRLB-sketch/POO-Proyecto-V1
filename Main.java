@@ -6,7 +6,7 @@
  * 
  * Creado por:
  * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
- * @version 1.0
+ * @version 2.0
  * @since 2020
  * 
  */
@@ -22,9 +22,13 @@ class Main {
     System.out.println("Bienvenidos a la simulacion de aglomeraciones en la ciudad de Guatemala");
 
     // Vamos a instanciar el registro en donde se almacenarán todos los registros
-    Registro registro = new Registro();
-    Persona persona;
-    Zonas zonas = new Zonas();
+    Registro registro = new Registro(); // Para tener el registro
+    Persona persona; // Para tener a la persona
+    Zonas zonas = new Zonas(); // Para las zonas
+
+    // Para los usuarios
+    Usuario user = new Usuario("Usuario Normal"); // Para identificar a un usuario normal
+    Admin administrador = new Admin(); // Para identificar y crear al Administrador del programa
 
     boolean salir = false;
     do{
