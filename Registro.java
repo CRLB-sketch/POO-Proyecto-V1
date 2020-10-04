@@ -16,6 +16,9 @@
 
 // Vamos a importar el paquete para usar ArrayList
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 import java.io.*;//Librerias varias que ayudaran a los registros y mantener la informacion
 
 // Aquí estará el encabezado
@@ -63,6 +66,29 @@ public class Registro{
 
     }
   }*/ //Será el método que mantendrá los registros registrados como archivos de texto
+
+  //Método para leer el archivo txt de los registros 
+  //Esto es para empezar, aún le falta....
+  public void Lectura (String Archivo){
+    File arch;
+    FileReader leer;
+    BufferedReader br;
+
+    try {
+      arch = new File(Archivo); 
+      leer = new FileReader(arch);
+      br = new BufferedReader(leer);
+      
+    } catch(Exception e){
+
+      JOptionPane.showMessageDialog(null, "Hubo un error para leer el archivo" + e);
+
+    }
+
+  } 
+
+
+
 
   // Este metodo es para agregar la información al registro
   private void AgregarInformacion(String info){
