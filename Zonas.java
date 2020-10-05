@@ -27,6 +27,11 @@ public class Zonas{
     rand = new Random();//objeto random;
   }
 
+  // --> Getter
+  public int getZonas(){
+    return zonas;
+  }
+
   // --> Método
   public int dpzonas(){
     int n=0;

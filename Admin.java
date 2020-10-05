@@ -45,9 +45,9 @@ public class Admin extends Usuario{
 
     // --> Métodos
     // Creo que voy a asignar un método para
-    public String salir(boolean afuera){ // Creo que este boolean no será necesario
+    public String salir(){
         // Si el Admin salio su estado de adentro será falso
-        if(afuera == true){
+        if(adminAdentro == true){
             CambiarAdminEstado();
             return "Admin cerro su sesión";
         }

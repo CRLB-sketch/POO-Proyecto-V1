@@ -16,15 +16,161 @@ import java.util.Scanner;
 public class Vista{
 
   // --> Atributo
-  private Scanner scan;
+  private Scanner scanner;
 
+  // --> Constructor
   public Vista(){
-    scan = new Scanner(System.in);
+    scanner = new Scanner(System.in);
   }
 
-  public void menuPrincipal(){
-
+  // --> Métodos
+  public void Bienvenida(){
+    System.out.println("Bienvenidos a la simulacion de aglomeraciones en la ciudad de Guatemala");
   }
-
   
+  // Métodos para el menu principal ****************************
+  public String menuPrincipal(){
+    System.out.println("---------------------------------------------");      
+    System.out.println("Ingrese el numero de la opcion que desea: ");
+    System.out.println("1. Registrar persona");
+    System.out.println("2. Mostrar info");
+    System.out.println("3. Admin");
+    System.out.println("4. Salir");
+    String opcion = scanner.nextLine();
+
+    return opcion;
+  }
+
+  // Métodos para la opción 1 de "Registrar Persona"
+  public String numeroCUI(){
+    System.out.println("\n----- Registrar persona -----");
+    System.out.println("Ingrese su numero de CUI: ");
+    String ucui = scanner.nextLine();
+
+    return ucui;
+  }
+
+  public int zonaEncuentra(){
+    System.out.println("Ingrese la zona en la que se encuentra: ");
+    int uzona = scanner.nextInt();
+    System.out.println("-->Se ingreso correctamente la zona");
+    return uzona;      
+  }
+  
+  public double horaActual(){
+    System.out.println("Ingrese la hora actual (Formato de 24 horas): ");
+    double uhora = scanner.nextDouble();
+
+    return uhora;
+  }
+
+  public String lugarEspecifico(){
+    System.out.println("Ingrese El lugar especifico: "); 
+    String uespecifico = scanner.nextLine();
+
+    return uespecifico;
+  }
+
+  public void infoExitosa(){
+    System.out.println("\n--> Información almacenada exitosamente :D\n");
+  }
+
+  public void error(){
+    System.out.println("--> Hey! No debes de ingresar letras en la sección que acabas de ingresar los datos");
+  }
+
+  // Métodos para la opción 2 de "Mostrar Info"
+  public void datosVacios(){
+    System.out.println("--> NO hay datos ingresados todavía");
+  }
+
+  public void mostrarInformación(Registro registro){
+    System.out.println("______________________________________");
+    System.out.println(registro.MostrarInformacion()); // Se mostrará la información registrada
+    System.out.println("Cantidad personas registradas: " + registro.PersonasRegistradas());
+    System.out.println("______________________________________");
+    System.out.println("---> Presiona enter para ver la cantidad de personas por zona <---");
+    String enter1 = scanner.nextLine();
+    // Se mostrará la cantidad de personas por zona del momento
+    System.out.println("La cantidad de personas por zona son:");
+  }
+
+  // Métodos para la opción 3 de "Registrar Admin"
+  public String aviso(){
+
+    System.out.println("ALERTA! esta sección es solamente para el administrador");
+    System.out.println("¿Desea continuar? (s/n)");
+    String decision = scanner.nextLine();
+
+    return decision;
+  }
+
+  public String pedirContrasena(){
+    System.out.println("Administrador porfavor ingrese la contraseña: ");
+    String contrasena = scanner.nextLine();
+
+    return contrasena;
+  }
+
+  public void rechazado(){
+    System.out.println("\n-> Contraseña Incorrecta!");
+  }
+
+  public void aceptado(){
+    System.out.println("\n-> ADMIN identificado");
+  }
+
+  // Método para la opción 4 de "Salir"
+  public void salir(){
+    System.out.println("\nSaliendo....");
+  }
+
+  // Método por sí el usuario no ingresa un valor válido
+  public void invalido(){
+    System.out.println("\n--> No ingreso un valor valido");
+  }
+  
+  public void darInformacionPorMetodo(int info){
+    System.out.println(info);
+  }
+
+  public void darInformacionPorMetodo(String info){
+    System.out.println(info);
+  }
+
+  public void salto(){
+    String salto = scanner.nextLine();
+  }
+
+  // Estos siguientes métodos será para el menu exclusivo del administrador ***************
+  public String menuAdmin(){
+    System.out.println("--- Menu Exclusivo Admin ---");
+    System.out.println("1. Mostrar datos de registros de personas");
+    System.out.println("2. Guardar apuntes/información u observaciones");
+    System.out.println("3. Salir de este menu exclusivo");
+    String opcion = scanner.nextLine();
+
+    return opcion;
+  }
+
+  // Opción #1 del admin "Mostrar datos de registros de personas"
+  public void MostrarRegistrosPersonas(){
+    System.out.println("--- Mostrar datos de registros de personas ---");
+    // Creo que aquí ya puedes escribir tu parte Magda :D (Att: Cristian)
+    /* PD, si quieres/necesitas cambiar cosas en este metodo o necesitas poner parametros tu hazlo ;)
+       o si quieres usar más funciones tambien dale sin miedo, solo procura no violar las reglas del MVC ;)*/
+
+       
+
+  }
+
+  // Opción #2 del admin "Guardar apuntes/información u observaciones"
+  public void GuardarApuntes(){
+    System.out.println("--- Guardar apuntes/información u observaciones ---");
+  }
+
+  // Opción #3 del admin "Para salir de este menu exclusivo"
+  public void salirMenuAdmin(){
+    System.out.println("\n-> Regresando al menú principal");
+  }
 }

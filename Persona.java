@@ -71,4 +71,16 @@ class Persona{
 	public void setLugarEspecífico(String lugar_especifico){
     this.lugar_especifico = lugar_especifico;
 	}	
+
+  @Override
+  public String toString(){
+    String string_nuevo = "";
+
+    string_nuevo += "\nCui: " + cui;
+    string_nuevo += "\nZona: " + zona;
+    string_nuevo += "\nHora: " + hora;
+    string_nuevo += "\nLugar específico: " + lugar_especifico;
+    
+    return string_nuevo;
+  }
 }

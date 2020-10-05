@@ -78,7 +78,18 @@ public class Registro{
       arch = new File(Archivo); 
       leer = new FileReader(arch);
       br = new BufferedReader(leer);
-      
+
+      String linea;
+      while ((linea = br.readLine())!= null) {
+        System.out.printnl(br);
+
+
+      }
+
+      br.close();
+      fr.close();
+
+
     } catch(Exception e){
 
       JOptionPane.showMessageDialog(null, "Hubo un error para leer el archivo" + e);
@@ -86,7 +97,6 @@ public class Registro{
     }
 
   } 
-
 
 
 
