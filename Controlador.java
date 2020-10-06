@@ -14,11 +14,10 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.Timer;
+// import javax.swing.Timer;
 
-import java.util.Timer; 
-
-
+import java.util.Timer;
+import java.util.TimerTask;
 
  public class Controlador{
    
@@ -35,7 +34,7 @@ import java.util.Timer;
      registro = new Registro(); // Para inicializar registro
      zonas = new Zonas(); // Para inicializar las zonas
      admin = new Admin(); // Para tener al admin incluido
-    timer = new Timer();//Para el reloj interno
+     timer = new Timer(); //Para el reloj interno
    }
 
    // --> Métodos
@@ -158,16 +157,23 @@ import java.util.Timer;
     }while(salirMenuAdmin != true);
   }
 
+  public void elTimer(){
 
-  //Para el timer 
-  TimerTask reloj = new TimerTask(){
-    @Override 
-    public void run(){
-      
+    TimerTask task = new TimerTask() {
+    int tic=0;
 
+    @Override
+    public void run()
+    {
+        if (tic%2==0)
+        System.out.println("TIC");
+        else
+        System.out.println("TOC");
+        tic++;
     }
+    };        
+    timer.schedule(task, 10, 5000);
+
   }
-
-
   
  }
