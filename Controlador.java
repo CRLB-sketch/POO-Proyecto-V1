@@ -10,6 +10,15 @@
  * @since 2020
  * 
  */
+import java.awt.event.ActionEvent;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
+
+import java.util.Timer; 
+
+
 
  public class Controlador{
    
@@ -18,6 +27,7 @@
    private Registro registro;
    private Zonas zonas;
    private Admin admin;
+   private Timer timer;
 
    // --> Constructor
    public Controlador(){
@@ -25,6 +35,7 @@
      registro = new Registro(); // Para inicializar registro
      zonas = new Zonas(); // Para inicializar las zonas
      admin = new Admin(); // Para tener al admin incluido
+    timer = new Timer();//Para el reloj interno
    }
 
    // --> Métodos
@@ -128,7 +139,7 @@
 
       switch(opcion){
         case "1":
-          v.MostrarRegistrosPersonas();
+          v.MostrarRegistrosPersonas(registro);
           break;
 
         case "2":
@@ -146,6 +157,17 @@
       }
     }while(salirMenuAdmin != true);
   }
+
+
+  //Para el timer 
+  TimerTask reloj = new TimerTask(){
+    @Override 
+    public void run(){
+      
+
+    }
+  }
+
 
   
  }

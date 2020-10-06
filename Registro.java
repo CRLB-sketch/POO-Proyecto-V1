@@ -54,40 +54,91 @@ public class Registro{
     AgregarInformacion(informacion);
   }
 
-  /*public void CrearRegistro(){
+    public void CrearRegistroG(Persona p){
+    personas.add(p);
     File f;
-    FileWriter W;
+    FileWriter w;
     BufferedWriter bw;
-    PrintWriter;
+    PrintWriter wr;
+    String nombre="RegistroGeneral.txt";
+    int zn=p.getZona();
+    double hr=p.getHora();
+    String zona= String.valueOf(zn);
+    String hora= String.valueOf(hr);
 
     try {
-      
+      f=new File(nombre);
+      w=new FileWriter(f);
+      bw=new BufferedWriter(bw);
+      wr=new PrintWriter(wr);
+
+      wr.write(p.getCui());
+      wr.append(" ");
+      wr.append(zona);
+      wr.append(" ");
+      wr.append(hora);
+      wr.append(" ");
+      wr.append(p.getLugarEspecifico());
+      wr.println();
+
+      wr.close();
+      bw.close();
     } catch(Exception e) {
 
     }
-  }*/ //Será el método que mantendrá los registros registrados como archivos de texto
+  }  //Será el método que mantendrá los registros registrados como archivos de texto
 
-  //Método para leer el archivo txt de los registros 
-  //Esto es para empezar, aún le falta....
+  public void CrearRegistroD(Persona p){
+    personas.add(p);
+    File f;
+    FileWriter w;
+    BufferedWriter bw;
+    PrintWriter wr;
+    String nombre="RegistroDiario.txt";
+    int zn=p.getZona();
+    double hr=p.getHora();
+    String zona= String.valueOf(zn);
+    String hora= String.valueOf(hr);
+
+    try {
+      f=new File(nombre);
+      w=new FileWriter(f);
+      bw=new BufferedWriter(bw);
+      wr=new PrintWriter(wr);
+
+      wr.write(p.getCui());
+      wr.append(" ");
+      wr.append(zona);
+      wr.append(" ");
+      wr.append(hora);
+      wr.append(" ");
+      wr.append(p.getLugarEspecifico());
+      wr.println();
+
+      wr.close();
+      bw.close();
+    } catch(Exception e) {
+
+    }
+  } //registro diario
+
+  //Método para leer el archivo txt de los registros.
   public void Lectura (String Archivo){
     File arch;
     FileReader leer;
     BufferedReader br;
 
     try {
-      arch = new File(Archivo); 
+      arch = new File(Archivo);
       leer = new FileReader(arch);
       br = new BufferedReader(leer);
 
       String linea;
-      while ((linea = br.readLine())!= null) {
-        System.out.printnl(br);
-
-
-      }
+      while ((linea= br.readLine()) != null);
 
       br.close();
-      fr.close();
+      leer.close();
+
 
 
     } catch(Exception e){
@@ -96,7 +147,8 @@ public class Registro{
 
     }
 
-  } 
+  }
+
 
 
 

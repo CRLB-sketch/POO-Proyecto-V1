@@ -17,10 +17,13 @@ public class Vista{
 
   // --> Atributo
   private Scanner scanner;
+  
 
   // --> Constructor
   public Vista(){
     scanner = new Scanner(System.in);
+  
+
   }
 
   // --> Métodos
@@ -154,11 +157,14 @@ public class Vista{
   }
 
   // Opción #1 del admin "Mostrar datos de registros de personas"
-  public void MostrarRegistrosPersonas(){
+  public void MostrarRegistrosPersonas(Registro registro){
     System.out.println("--- Mostrar datos de registros de personas ---");
     // Creo que aquí ya puedes escribir tu parte Magda :D (Att: Cristian)
     /* PD, si quieres/necesitas cambiar cosas en este metodo o necesitas poner parametros tu hazlo ;)
        o si quieres usar más funciones tambien dale sin miedo, solo procura no violar las reglas del MVC ;)*/
+    //LLamado al método para leer los registros.
+    registro.Lectura("RegistroGeneral.txt");
+
 
        
 
