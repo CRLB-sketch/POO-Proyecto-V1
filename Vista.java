@@ -156,26 +156,29 @@ public class Vista{
     return opcion;
   }
 
-  // Opción #1 del admin "Mostrar datos de registros de personas"
+  // Opción #1 del admin "Mostrar datos de registros de personas generales"
   public void MostrarRegistrosPersonas(Registro registro){
-    System.out.println("--- Mostrar datos de registros de personas ---");
-    // Creo que aquí ya puedes escribir tu parte Magda :D (Att: Cristian)
-    /* PD, si quieres/necesitas cambiar cosas en este metodo o necesitas poner parametros tu hazlo ;)
-       o si quieres usar más funciones tambien dale sin miedo, solo procura no violar las reglas del MVC ;)*/
-    //LLamado al método para leer los registros.
-    registro.Lectura("RegistroGeneral.txt");
-
-
-       
+    System.out.println("--- Mostrar datos de registros de personas generales ---");
+    
+    registro.LecturaGeneral("RegistroGeneral.txt");
 
   }
 
-  // Opción #2 del admin "Guardar apuntes/información u observaciones"
+  // Opción #2 del admin "Mostrar datos de registros de personas diarias"
+  public void MostrarRegistrosPersonas2(Registro registro){
+    System.out.println("--- Mostrar datos de registros de personas diarias ---");
+    
+    registro.LecturaDiario("RegistroDiario.txt");
+
+  }
+
+
+  // Opción #3 del admin "Guardar apuntes/información u observaciones"
   public void GuardarApuntes(){
     System.out.println("--- Guardar apuntes/información u observaciones ---");
   }
 
-  // Opción #3 del admin "Para salir de este menu exclusivo"
+  // Opción #4 del admin "Para salir de este menu exclusivo"
   public void salirMenuAdmin(){
     System.out.println("\n-> Regresando al menú principal");
   }

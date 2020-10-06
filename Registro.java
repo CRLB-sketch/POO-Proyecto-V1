@@ -122,8 +122,8 @@ public class Registro{
     }
   } //registro diario
 
-  //Método para leer el archivo txt de los registros.
-  public void Lectura (String Archivo){
+  //Método para leer el archivo txt de los registros generales
+  public void LecturaGeneral (String Archivo){
     File arch;
     FileReader leer;
     BufferedReader br;
@@ -148,7 +148,32 @@ public class Registro{
     }
 
   }
+//Método para leer el archivo txt de los registros diarios
+  public void LecturaDiario (String Archivo){
+    File arch;
+    FileReader leer;
+    BufferedReader br;
 
+    try {
+      arch = new File(Archivo);
+      leer = new FileReader(arch);
+      br = new BufferedReader(leer);
+
+      String linea;
+      while ((linea= br.readLine()) != null);
+
+      br.close();
+      leer.close();
+
+
+
+    } catch(Exception e){
+
+      JOptionPane.showMessageDialog(null, "Hubo un error para leer el archivo" + e);
+
+    }
+
+  }
 
 
 

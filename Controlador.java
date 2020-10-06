@@ -142,10 +142,14 @@ import java.util.TimerTask;
           break;
 
         case "2":
+          v.MostrarRegistrosPersonas2(registro);
+          break;  
+          
+        case "3":
           v.GuardarApuntes();
           break;
 
-        case "3":
+        case "4":
           v.salirMenuAdmin();
           salirMenuAdmin = true;
           break;
@@ -153,6 +157,7 @@ import java.util.TimerTask;
         default:
           v.invalido();
           break;
+
       }
     }while(salirMenuAdmin != true);
   }
