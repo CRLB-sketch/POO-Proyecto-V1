@@ -40,6 +40,7 @@ public class Registro{
   }
 
   // --> Metodos
+  
   // Este método es para agregar a la persona en el historial de personas
   public void AgregarPersona(Persona p){
     personas.add(p); // Se agregará a la persona al listado de personas
@@ -54,7 +55,7 @@ public class Registro{
     AgregarInformacion(informacion);
   }
 
-    public void CrearRegistroG(Persona p){
+  public void CrearRegistroG(Persona p){
     personas.add(p);
     File f;
     FileWriter w;
@@ -69,8 +70,8 @@ public class Registro{
     try {
       f=new File(nombre);
       w=new FileWriter(f);
-      bw=new BufferedWriter(bw);
-      wr=new PrintWriter(wr);
+      bw=new BufferedWriter(w);
+      wr=new PrintWriter(bw);
 
       wr.write(p.getCui());
       wr.append(" ");
@@ -103,8 +104,8 @@ public class Registro{
     try {
       f=new File(nombre);
       w=new FileWriter(f);
-      bw=new BufferedWriter(bw);
-      wr=new PrintWriter(wr);
+      bw=new BufferedWriter(w);
+      wr=new PrintWriter(bw);
 
       wr.write(p.getCui());
       wr.append(" ");
@@ -134,7 +135,11 @@ public class Registro{
       br = new BufferedReader(leer);
 
       String linea;
-      while ((linea= br.readLine()) != null);
+      while ((linea= br.readLine()) != null){
+
+      
+        System.out.print(linea);
+      }
 
       br.close();
       leer.close();
@@ -160,7 +165,9 @@ public class Registro{
       br = new BufferedReader(leer);
 
       String linea;
-      while ((linea= br.readLine()) != null);
+      while ((linea= br.readLine()) != null){
+        System.out.print(linea);
+      }
 
       br.close();
       leer.close();
@@ -201,4 +208,20 @@ public class Registro{
     return cantidad;
   }
 
+  // public static void borrarDatos(){
+  //   .delete();
+  // }  
+
+  public void limpiarRegistro(){
+    try{
+      BufferedWriter bw = new BufferedWriter(new FileWriter("RegistroDiario.txt"));
+
+      bw.write("");
+      bw.close();
+      
+    }catch(Exception e){
+      return;
+    }
+
+  }
 }

@@ -14,6 +14,8 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
+import java.io.*;
+
 // import javax.swing.Timer;
 
 import java.util.Timer;
@@ -44,6 +46,8 @@ import java.util.TimerTask;
 
      v.Bienvenida(); // Mostar mensaje de bienvenida
 
+     elTimer(registro);//Para que ejecute el timer
+
      String opcion = "";
      boolean salir = false;
      do{
@@ -68,6 +72,12 @@ import java.util.TimerTask;
             persona = new Persona(ucui, uzona, uhora, uespecifico);
 
             registro.AgregarPersona(persona); // Aquí se mandará la persona al historial de personas y de una vez se creará el registro
+
+
+            // Te refieres a esto verdad?? Att: Cris 
+            
+            registro.CrearRegistroG(persona);//crea elñ registro general
+            registro.CrearRegistroD(persona);//crea el registro diario
 
             v.infoExitosa(); // Para mostrar el mensaje que la información se agrego exitosamente
           }
@@ -143,13 +153,9 @@ import java.util.TimerTask;
 
         case "2":
           v.MostrarRegistrosPersonas2(registro);
-          break;  
-          
-        case "3":
-          v.GuardarApuntes();
-          break;
+          break;            
 
-        case "4":
+        case "3":
           v.salirMenuAdmin();
           salirMenuAdmin = true;
           break;
@@ -162,22 +168,17 @@ import java.util.TimerTask;
     }while(salirMenuAdmin != true);
   }
 
-  public void elTimer(){
+  public void elTimer(Registro registro){
 
     TimerTask task = new TimerTask() {
-    int tic=0;
-
+    
     @Override
     public void run()
-    {
-        if (tic%2==0)
-        System.out.println("TIC");
-        else
-        System.out.println("TOC");
-        tic++;
+    {          
+      registro.limpiarRegistro();
     }
     };        
-    timer.schedule(task, 10, 5000);
+    timer.schedule(task, 43200000, 43200000);
 
   }
   

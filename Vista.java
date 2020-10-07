@@ -148,8 +148,8 @@ public class Vista{
   // Estos siguientes métodos será para el menu exclusivo del administrador ***************
   public String menuAdmin(){
     System.out.println("--- Menu Exclusivo Admin ---");
-    System.out.println("1. Mostrar datos de registros de personas");
-    System.out.println("2. Guardar apuntes/información u observaciones");
+    System.out.println("1. Mostrar datos de registros de personas personas generales");
+    System.out.println("2. Mostrar datos de registros de personas personas diarias");
     System.out.println("3. Salir de este menu exclusivo");
     String opcion = scanner.nextLine();
 
@@ -170,12 +170,6 @@ public class Vista{
     
     registro.LecturaDiario("RegistroDiario.txt");
 
-  }
-
-
-  // Opción #3 del admin "Guardar apuntes/información u observaciones"
-  public void GuardarApuntes(){
-    System.out.println("--- Guardar apuntes/información u observaciones ---");
   }
 
   // Opción #4 del admin "Para salir de este menu exclusivo"
