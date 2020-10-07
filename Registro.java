@@ -144,8 +144,6 @@ public class Registro{
       br.close();
       leer.close();
 
-
-
     } catch(Exception e){
 
       JOptionPane.showMessageDialog(null, "Hubo un error para leer el archivo" + e);
@@ -208,10 +206,7 @@ public class Registro{
     return cantidad;
   }
 
-  // public static void borrarDatos(){
-  //   .delete();
-  // }  
-
+  // Este método es para limpiar datos "Específicamente para el registro diario"
   public void limpiarRegistro(){
     try{
       BufferedWriter bw = new BufferedWriter(new FileWriter("RegistroDiario.txt"));
@@ -222,6 +217,5 @@ public class Registro{
     }catch(Exception e){
       return;
     }
-
   }
 }

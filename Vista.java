@@ -36,7 +36,7 @@ public class Vista{
     System.out.println("---------------------------------------------");      
     System.out.println("Ingrese el numero de la opcion que desea: ");
     System.out.println("1. Registrar persona");
-    System.out.println("2. Mostrar info");
+    System.out.println("2. Mostrar info de la sesión de hoy");
     System.out.println("3. Admin");
     System.out.println("4. Salir");
     String opcion = scanner.nextLine();
@@ -162,6 +162,7 @@ public class Vista{
     
     registro.LecturaGeneral("RegistroGeneral.txt");
 
+    System.out.println("");
   }
 
   // Opción #2 del admin "Mostrar datos de registros de personas diarias"
@@ -170,6 +171,7 @@ public class Vista{
     
     registro.LecturaDiario("RegistroDiario.txt");
 
+    System.out.println("");
   }
 
   // Opción #4 del admin "Para salir de este menu exclusivo"

@@ -168,6 +168,7 @@ import java.util.TimerTask;
     }while(salirMenuAdmin != true);
   }
 
+  // Esto nos ayudará a borrar los datos despues e un cierto tiempo
   public void elTimer(Registro registro){
 
     TimerTask task = new TimerTask() {
@@ -177,7 +178,7 @@ import java.util.TimerTask;
     {          
       registro.limpiarRegistro();
     }
-    };        
+    };            
     timer.schedule(task, 43200000, 43200000);
 
   }
