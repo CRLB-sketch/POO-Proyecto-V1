@@ -13,7 +13,6 @@
 
 import java.util.*;
 import java.util.Random;
-//import java.util.ArrayList;
 
 public class Zonas{
   
@@ -40,9 +39,33 @@ public class Zonas{
       int rand_int = rand.nextInt(1000);
       zonas[i]= rand_int;
       System.out.println("Zona " + (i+1) + ":");
+      System.out.println(this.obtenerAvisoPorColor(zonas[i]));
       System.out.println(zonas[i]);
       }
     return n;
+  }
+
+  // Metodos para mandar los avisos de colores
+  private String obtenerAvisoPorColor(int personas){ // personas refleja la personas de personas
+    String info = "";
+
+    if(personas <= 100){
+      info += ("\u001B[32m" + "Verde" + "\u001B[0m");
+    }
+    else if(personas >= 101 && personas <= 600){
+      info += ("\u001B[33m" + "Anarillo" + "\u001B[0m");
+    }
+    else{
+      info += ("\u001B[31m" + "Rojo" + "\u001B[0m");
+    }
+    
+    return info;
+  }
+
+  private int probabilidadContagio(int personas){
+    int cifra = 0;
+
+    return cifra;
   }
   
 }

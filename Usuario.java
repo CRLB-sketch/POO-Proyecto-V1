@@ -11,7 +11,7 @@
  * 
  */
 
-public class Usuario {
+public abstract class Usuario {
 
     // --> Atributos
     protected String roll;
