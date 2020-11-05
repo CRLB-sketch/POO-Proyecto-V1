@@ -31,18 +31,21 @@ public class Zonas{
     return zonas;
   }
 
-  // --> Método
-  public int dpzonas(){
-    int n=0;
+  // --> Métodos   
+  public String dpzonas(){
+    String info = "";
+    
     int[] zonas = new int [21]; 
     for(int i=0;i<zonas.length ; i++){ 
       int rand_int = rand.nextInt(1000);
       zonas[i]= rand_int;
-      System.out.println("Zona " + (i+1) + ":");
-      System.out.println(this.obtenerAvisoPorColor(zonas[i]));
-      System.out.println(zonas[i]);
-      }
-    return n;
+      String color = this.obtenerAvisoPorColor(zonas[i]);
+      info += "\n--------------------------------";
+      info += "\nZona " + (i+1) + ": " + color;
+      info += "\n-> " + zonas[i];      
+    }
+
+    return info;
   }
 
   // Metodos para mandar los avisos de colores
@@ -53,7 +56,7 @@ public class Zonas{
       info += ("\u001B[32m" + "Verde" + "\u001B[0m");
     }
     else if(personas >= 101 && personas <= 600){
-      info += ("\u001B[33m" + "Anarillo" + "\u001B[0m");
+      info += ("\u001B[33m" + "Amarillo" + "\u001B[0m");
     }
     else{
       info += ("\u001B[31m" + "Rojo" + "\u001B[0m");

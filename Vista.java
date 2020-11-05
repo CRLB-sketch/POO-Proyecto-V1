@@ -37,8 +37,9 @@ public class Vista{
     System.out.println("Ingrese el numero de la opcion que desea: ");
     System.out.println("1. Registrar persona");
     System.out.println("2. Mostrar info de la sesión de hoy");
-    System.out.println("3. Admin");
-    System.out.println("4. Salir");
+    System.out.println("3. Mostrar registro general de personas por zona");
+    System.out.println("4. Admin");
+    System.out.println("5. Salir");
     String opcion = scanner.nextLine();
 
     return opcion;
@@ -91,11 +92,7 @@ public class Vista{
     System.out.println("______________________________________");
     System.out.println(registro.MostrarInformacion()); // Se mostrará la información registrada
     System.out.println("Cantidad personas registradas: " + registro.PersonasRegistradas());
-    System.out.println("______________________________________");
-    System.out.println("---> Presiona enter para ver la cantidad de personas por zona <---");
-    String enter1 = scanner.nextLine();
-    // Se mostrará la cantidad de personas por zona del momento
-    System.out.println("La cantidad de personas por zona son:");
+    
   }
 
   // Métodos para la opción 3 de "Registrar Admin"
@@ -177,5 +174,14 @@ public class Vista{
   // Opción #4 del admin "Para salir de este menu exclusivo"
   public void salirMenuAdmin(){
     System.out.println("\n-> Regresando al menú principal");
+  }
+
+  //Para la opción 4 del registro de personas por zona
+  public void mostrarGeneral(){
+    System.out.println("______________________________________");
+    System.out.println("---> Presiona enter para ver la cantidad de personas por zona <---");
+    String enter1 = scanner.nextLine();
+    // Se mostrará la cantidad de personas por zona del momento
+    System.out.println("La cantidad de personas por zona son:");
   }
 }

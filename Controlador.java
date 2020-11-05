@@ -20,6 +20,7 @@ import java.io.*;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.Random;
 
  public class Controlador{
    
@@ -72,11 +73,8 @@ import java.util.TimerTask;
             persona = new Persona(ucui, uzona, uhora, uespecifico);
 
             registro.AgregarPersona(persona); // Aquí se mandará la persona al historial de personas y de una vez se creará el registro
-
-
-            // Te refieres a esto verdad?? Att: Cris 
             
-            registro.CrearRegistroG(persona);//crea elñ registro general
+            registro.CrearRegistroG(persona);//crea el registro general
             registro.CrearRegistroD(persona);//crea el registro diario
 
             v.infoExitosa(); // Para mostrar el mensaje que la información se agrego exitosamente
@@ -93,14 +91,19 @@ import java.util.TimerTask;
             v.datosVacios(); // Avisaremos que los datos estan vacios
           }else{
             v.mostrarInformación(registro); // Para mostrar todos los datos
-            int r;
-            r= zonas.dpzonas();
-            v.darInformacionPorMetodo(r);
           }
           break;
-
-        // Opcion 3: "Para que el Admin verifique los datos totales"
+       
+        // Opcion 3: "Para que el usuario pueda ver las persnas por zona y las alertas que hay depende de la gente que hay"
         case "3":
+          v.mostrarGeneral();
+          String r;
+          r = zonas.dpzonas();
+          v.darInformacionPorMetodo(r);
+          break;  
+
+        // Opcion 4: "Para que el Admin verifique los datos totales"
+        case "4":
           String desicion = v.aviso();
           if(desicion.equals("s") || desicion.equals("S")){
 
@@ -125,8 +128,8 @@ import java.util.TimerTask;
 
           break;
 
-        // Opcion 4: "Salir"
-        case "4":
+        // Opcion 5: "Salir"
+        case "5":
           v.salir();
           salir = true;
           break;
