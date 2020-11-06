@@ -43,6 +43,9 @@ import java.util.Random;
    // --> Métodos
    public void menu(){ // Menu prinpal ******************************************************
 
+     // Aquí se almacenará la cantidad de personas que estan cuando empiece la simulacion
+     String mostrarPersonasPorZona = zonas.dpzonas();
+
      Persona persona; // Para tener a la persona/personas que se vayan a crear
 
      v.Bienvenida(); // Mostar mensaje de bienvenida
@@ -64,7 +67,23 @@ import java.util.Random;
 
             String ucui = v.numeroCUI(); // Para solicitar numero CUI
             int uzona = v.zonaEncuentra();
+            //Método para solcitar horas
+            //con programación defensiva 
             double uhora = v.horaActual();
+            boolean correcto = false;
+            while (correcto!= true){
+              if (uhora > 25 || uhora < 1){
+                v.horainvalido();
+                uhora = v.horaActual();
+
+              }else if (correcto = true){
+                v.horavalido();
+
+              }
+
+            }
+               
+
             v.salto();
 
             String uespecifico = v.lugarEspecifico();
@@ -97,9 +116,8 @@ import java.util.Random;
         // Opcion 3: "Para que el usuario pueda ver las persnas por zona y las alertas que hay depende de la gente que hay"
         case "3":
           v.mostrarGeneral();
-          String r;
-          r = zonas.dpzonas();
-          v.darInformacionPorMetodo(r);
+          // Vamos a mostrar la información de las persoans que estan en el método
+          v.darInformacionPorMetodo(mostrarPersonasPorZona);
           break;  
 
         // Opcion 4: "Para que el Admin verifique los datos totales"

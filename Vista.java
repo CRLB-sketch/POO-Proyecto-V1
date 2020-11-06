@@ -37,7 +37,7 @@ public class Vista{
     System.out.println("Ingrese el numero de la opcion que desea: ");
     System.out.println("1. Registrar persona");
     System.out.println("2. Mostrar info de la sesión de hoy");
-    System.out.println("3. Mostrar registro general de personas por zona");
+    System.out.println("3. Mostrar personas por zona con probabilidad");
     System.out.println("4. Admin");
     System.out.println("5. Salir");
     String opcion = scanner.nextLine();
@@ -129,7 +129,15 @@ public class Vista{
   public void invalido(){
     System.out.println("\n--> No ingreso un valor valido");
   }
+  public void horainvalido(){
+    System.out.print("\n--> No ingreso una hora valida");
+  }
+  public void horavalido(){
+    System.out.println(" \n-->Se ingreso correctamente la hora");
+
+  }
   
+
   public void darInformacionPorMetodo(int info){
     System.out.println(info);
   }
@@ -179,9 +187,9 @@ public class Vista{
   //Para la opción 4 del registro de personas por zona
   public void mostrarGeneral(){
     System.out.println("______________________________________");
+    // Se mostrará la cantidad de personas por zona del momento
     System.out.println("---> Presiona enter para ver la cantidad de personas por zona <---");
     String enter1 = scanner.nextLine();
-    // Se mostrará la cantidad de personas por zona del momento
     System.out.println("La cantidad de personas por zona son:");
   }
 }

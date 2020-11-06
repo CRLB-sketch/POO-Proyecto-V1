@@ -56,7 +56,6 @@ public class Registro{
   }
 
   public void CrearRegistroG(Persona p){
-    // personas.add(p);
     File f;
     FileWriter w;
     BufferedWriter bw;
@@ -90,7 +89,6 @@ public class Registro{
   }  //Será el método que mantendrá los registros registrados como archivos de texto
 
   public void CrearRegistroD(Persona p){
-    // personas.add(p);
     File f;
     FileWriter w;
     BufferedWriter bw;
