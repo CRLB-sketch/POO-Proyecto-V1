@@ -6,11 +6,12 @@
  * 
  * Creado por:
  * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
- * @version 2.0
+ * @version 3.0
  * @since 2020
  * 
  */
 
+// La clase Administrador heredará de usuario
 public class Admin extends Usuario{
 
     // --> Atributos exclusivos para Admin
@@ -26,6 +27,11 @@ public class Admin extends Usuario{
     }
 
     // --> Getters
+    @Override
+    public String getRoll(){
+      return roll;
+    }
+    
     // Este Getter será especial ya que la contraseña no debe de ingresar cualquier persona
     public String getContrasena(String verificar){
         // Si la contraseña es correcta entonces retornará la contraseña
@@ -59,5 +65,16 @@ public class Admin extends Usuario{
 
     private void CambiarAdminEstado(){
         adminAdentro = false;
+    }
+
+    @Override
+    public String toString(){
+      String elString = "";
+
+      elString += "\n------------------------------";
+      elString += "\n- Este es el Administrador ;) ";
+      elString += "\n------------------------------";
+
+      return elString;
     }
 }

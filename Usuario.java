@@ -6,7 +6,7 @@
  * 
  * Creado por:
  * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
- * @version 2.0
+ * @version 3.0
  * @since 2020
  * 
  */
@@ -22,7 +22,11 @@ public abstract class Usuario {
     }
 
     // --> Getters
-    public String getRoll(){
-        return roll;
-    }    
+    // public String getRoll(){
+    //     return roll;
+    // }
+
+    abstract public String getRoll();
+
+    abstract public String toString();
 }
