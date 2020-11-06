@@ -37,12 +37,14 @@ public class Zonas{
     
     int[] zonas = new int [21]; 
     for(int i=0;i<zonas.length ; i++){ 
-      int rand_int = rand.nextInt(1000);
+      int rand_int = rand.nextInt(1000); // Personas Max
       zonas[i]= rand_int;
       String color = this.obtenerAvisoPorColor(zonas[i]);
       info += "\n--------------------------------";
       info += "\nZona " + (i+1) + ": " + color;
-      info += "\n-> " + zonas[i];      
+      info += "\n-> Cantidad Personas: " + zonas[i];      
+      float porcentaje = probabilidadContagio(zonas[i]);
+      info += "\n-> Probabilidad Contagio: " + porcentaje + "%";
     }
 
     return info;
@@ -65,10 +67,11 @@ public class Zonas{
     return info;
   }
 
-  private int probabilidadContagio(int personas){
-    int cifra = 0;
+  private float probabilidadContagio(int personas){
 
-    return cifra;
+    float porcentajeFinal = (float)((personas*100)/1000);
+
+    return porcentajeFinal;
   }
   
 }

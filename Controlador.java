@@ -1,6 +1,6 @@
 /**
  * <h1> Proyecto POO - Entrega #2 | Programa que maneja las aglomeraciones por COVID-19 </h1>
- * <h2> Vista (tipo "Vista/Interfaz"): Clase que lleva tiene almacenado todos los mensajes y entrada de usuario </h2>
+ * <h2> Controlador: Clase que se encarga de la logica principal del programa </h2>
  * 
  * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
  * 
@@ -10,13 +10,12 @@
  * @since 2020
  * 
  */
+ 
 import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
 import java.io.*;
-
-// import javax.swing.Timer;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -65,25 +64,38 @@ import java.util.Random;
           // Pondremos un try-catch para evitar errores de entrada de usuario
           try{
 
-            String ucui = v.numeroCUI(); // Para solicitar numero CUI
-            int uzona = v.zonaEncuentra();
-            //Método para solcitar horas
-            //con programación defensiva 
+            // Para solicitar numero CUI
+            String ucui = v.numeroCUI(); 
+            
+            // Para solicitar zona y se verificará si la zona es válida o no
+            int uzona = 0;
+            boolean zonaValida = false;
+            while(zonaValida != true){
+              int la_zona = v.zonaEncuentra();
+              if(la_zona < 22 && la_zona > 0){
+                zonaValida = true;
+                v.zonavalido();
+                uzona = la_zona;
+              }
+              else{
+                v.zonainvalido();
+              }
+            }
+
+            //Método para solcitar horas con programación defensiva             
             double uhora = v.horaActual();
             boolean correcto = false;
             while (correcto!= true){
               if (uhora > 25 || uhora < 1){
                 v.horainvalido();
+                v.salto();
                 uhora = v.horaActual();
 
               }else if (correcto = true){
                 v.horavalido();
-
               }
-
             }
                
-
             v.salto();
 
             String uespecifico = v.lugarEspecifico();

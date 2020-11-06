@@ -55,7 +55,13 @@ public class Registro{
     AgregarInformacion(informacion);
   }
 
+    public void creartxtG(String nombretxtg){
+    File f;
+    f= new File(nombretxtg);
+  }
+
   public void CrearRegistroG(Persona p){
+    personas.add(p);
     File f;
     FileWriter w;
     BufferedWriter bw;
@@ -68,27 +74,53 @@ public class Registro{
 
     try {
       f=new File(nombre);
-      w=new FileWriter(f);
-      bw=new BufferedWriter(w);
-      wr=new PrintWriter(bw);
+      if (!f.exists()) {
+        w=new FileWriter(f);
+        bw=new BufferedWriter(w);
+        wr=new PrintWriter(bw);
 
-      wr.write(p.getCui());
-      wr.append(" ");
-      wr.append(zona);
-      wr.append(" ");
-      wr.append(hora);
-      wr.append(" ");
-      wr.append(p.getLugarEspecifico());
-      wr.println();
+        wr.write(p.getCui());
+        wr.append(" ");
+        wr.append(zona);
+        wr.append(" ");
+        wr.append(hora);
+        wr.append(" ");
+        wr.append(p.getLugarEspecifico());
+        wr.println();
 
-      wr.close();
-      bw.close();
+        wr.close();
+        bw.close();
+      }else {
+        w=new FileWriter(f);
+        bw=new BufferedWriter(w);
+        wr=new PrintWriter(bw);
+
+        wr.write(p.getCui());
+        wr.append(" ");
+        wr.append(zona);
+        wr.append(" ");
+        wr.append(hora);
+        wr.append(" ");
+        wr.append(p.getLugarEspecifico());
+        wr.println();
+
+        wr.close();
+        bw.close();
+      }
     } catch(Exception e) {
 
     }
   }  //Será el método que mantendrá los registros registrados como archivos de texto
 
+
+
+  public void creartxtD(String nombretxtd){
+    File f;
+    f= new File(nombretxtd);
+  }
+
   public void CrearRegistroD(Persona p){
+    personas.add(p);
     File f;
     FileWriter w;
     BufferedWriter bw;
@@ -101,21 +133,39 @@ public class Registro{
 
     try {
       f=new File(nombre);
-      w=new FileWriter(f);
-      bw=new BufferedWriter(w);
-      wr=new PrintWriter(bw);
+      if (!f.exists()) {
+        w=new FileWriter(f);
+        bw=new BufferedWriter(w);
+        wr=new PrintWriter(bw);
 
-      wr.write(p.getCui());
-      wr.append(" ");
-      wr.append(zona);
-      wr.append(" ");
-      wr.append(hora);
-      wr.append(" ");
-      wr.append(p.getLugarEspecifico());
-      wr.println();
+        wr.write(p.getCui());
+        wr.append(" ");
+        wr.append(zona);
+        wr.append(" ");
+        wr.append(hora);
+        wr.append(" ");
+        wr.append(p.getLugarEspecifico());
+        wr.println();
 
-      wr.close();
-      bw.close();
+        wr.close();
+        bw.close();
+      }else {
+        w=new FileWriter(f);
+        bw=new BufferedWriter(w);
+        wr=new PrintWriter(bw);
+
+        wr.write(p.getCui());
+        wr.append(" ");
+        wr.append(zona);
+        wr.append(" ");
+        wr.append(hora);
+        wr.append(" ");
+        wr.append(p.getLugarEspecifico());
+        wr.println();
+
+        wr.close();
+        bw.close();
+      }
     } catch(Exception e) {
 
     }

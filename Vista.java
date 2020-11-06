@@ -57,14 +57,13 @@ public class Vista{
   public int zonaEncuentra(){
     System.out.println("Ingrese la zona en la que se encuentra: ");
     int uzona = scanner.nextInt();
-    System.out.println("-->Se ingreso correctamente la zona");
     return uzona;      
   }
   
   public double horaActual(){
     System.out.println("Ingrese la hora actual (Formato de 24 horas): ");
     double uhora = scanner.nextDouble();
-
+    
     return uhora;
   }
 
@@ -133,11 +132,17 @@ public class Vista{
     System.out.print("\n--> No ingreso una hora valida");
   }
   public void horavalido(){
-    System.out.println(" \n-->Se ingreso correctamente la hora");
+    System.out.println(" \n-->Se ingreso correctamente la hora\n");
+
+  }
+  public void zonainvalido(){
+    System.out.print("\n--> No ingreso una zona valida");
+  }
+  public void zonavalido(){
+    System.out.println(" \n-->Se ingreso correctamente la zona\n");
 
   }
   
-
   public void darInformacionPorMetodo(int info){
     System.out.println(info);
   }

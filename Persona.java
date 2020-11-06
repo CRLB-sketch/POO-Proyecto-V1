@@ -4,7 +4,6 @@
  * 
  * Esta clase representará a una persona y tendrá sus datos correspondientes
  * 
- * 
  * <p>Programación orientada a Objetos - Universidad del Valle de Guatemala </p>
  * 
  * Creado por:
