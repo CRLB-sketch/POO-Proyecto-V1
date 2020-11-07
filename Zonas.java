@@ -67,6 +67,7 @@ public class Zonas{
     return info;
   }
 
+  //Metodo que muestra la probabilidad de contagio en la zona
   private float probabilidadContagio(int personas){
 
     float porcentajeFinal = (float)((personas*100)/1000);
