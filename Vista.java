@@ -6,7 +6,7 @@
  * 
  * Creado por:
  * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
- * @version 3.0
+ * @version Final
  * @since 2020
  * 
  */
@@ -22,8 +22,6 @@ public class Vista{
   // --> Constructor
   public Vista(){
     scanner = new Scanner(System.in);
-  
-
   }
 
   // --> Métodos
@@ -46,16 +44,16 @@ public class Vista{
   }
 
   // Métodos para la opción 1 de "Registrar Persona"
-  public String numeroCUI(){
+  public int numeroCUI(){
     System.out.println("\n----- Registrar persona -----");
     System.out.println("Ingrese su numero de CUI: ");
-    String ucui = scanner.nextLine();
+    int ucui = scanner.nextInt();
 
     return ucui;
   }
 
   public int zonaEncuentra(){
-    System.out.println("Ingrese la zona en la que se encuentra: ");
+    System.out.println("\nIngrese la zona en la que se encuentra:");
     int uzona = scanner.nextInt();
     return uzona;      
   }
@@ -129,7 +127,7 @@ public class Vista{
     System.out.println("\n--> No ingreso un valor valido");
   }
   public void horainvalido(){
-    System.out.print("\n--> No ingreso una hora valida");
+    System.out.print("\n--> No ingreso una hora valida\n");
   }
   public void horavalido(){
     System.out.println(" \n-->Se ingreso correctamente la hora\n");

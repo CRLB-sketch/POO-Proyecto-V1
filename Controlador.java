@@ -6,7 +6,7 @@
  * 
  * Creado por:
  * @author ["Cristian Laynez", "Elean Rivas", "Lucía Samayoa", "Magdalena Esquina", "Dieter Loesener", "Diego Sanchez"]
- * @version 3.0
+ * @version Final
  * @since 2020
  * 
  */
@@ -64,8 +64,19 @@ import java.util.Random;
           // Pondremos un try-catch para evitar errores de entrada de usuario
           try{
 
-            // Para solicitar numero CUI
-            String ucui = v.numeroCUI(); 
+            String ucio_str = "";
+            boolean cui_valido = false;
+            do {
+              // Para solicitar numero CUI
+              int ucui = v.numeroCUI(); 
+              v.salto();
+  
+              // Convertir de int a string
+              String ucui_cambio = Integer.toString(ucui);
+              ucio_str = ucui_cambio;
+              cui_valido = true;
+              
+            } while (cui_valido != true);
             
             // Para solicitar zona y se verificará si la zona es válida o no
             int uzona = 0;
@@ -83,25 +94,52 @@ import java.util.Random;
             }
 
             //Método para solcitar horas con programación defensiva             
-            double uhora = v.horaActual();
+            double hora_final = 0;
             boolean correcto = false;
-            while (correcto!= true){
-              if (uhora > 25 || uhora < 1){
-                v.horainvalido();
-                v.salto();
-                uhora = v.horaActual();
-
-              }else if (correcto = true){
-                v.horavalido();
+            do {
+              
+              double entrada = v.horaActual();
+              // Para verificar formato de horas
+              if(entrada < 24 && entrada > 0){
+                double d = entrada;
+                short[] digitos = new short[2];
+                double temp = d - ((int) d) + 0.5 * 1e-10;
+                for (int i = 0; i < digitos.length && temp != 0; i++)
+                {
+                  temp *= 10;
+                  digitos[i] = (short) temp;
+                  temp -= (int) temp;
+                }
+                
+                // Para verificar los digitos
+                String cadena = "";
+                for (short s : digitos) {            
+                  cadena += s;
+                }
+                
+                int minutos = Integer.parseInt(cadena);
+                // Para verificar formato de minutos
+                if(minutos >= 60){
+                  v.horainvalido();                
+                }
+                else{                    
+                  v.horavalido();
+                  correcto = true;              
+                  hora_final = entrada;
+                }
               }
-            }
+              else{
+                v.horainvalido();                
+              }
+              
+            } while (correcto != true);
                
             v.salto();
 
             String uespecifico = v.lugarEspecifico();
 
             // Aquí se creará una nueva persona con las caracteristicas ingresadas anteriormente
-            persona = new Persona(ucui, uzona, uhora, uespecifico);
+            persona = new Persona(ucio_str, uzona, hora_final, uespecifico);
 
             registro.AgregarPersona(persona); // Aquí se mandará la persona al historial de personas y de una vez se creará el registro
             
